@@ -43,6 +43,10 @@
 #define OP_SHUTDOWN    12
 #define OP_DISPLAYTEST 15
 
+LedControl::LedControl(){
+    
+}
+
 LedControl::LedControl(int dataPin, int clkPin, int csPin, int numDevices) {
     SPI_MOSI=dataPin;
     SPI_CLK=clkPin;
