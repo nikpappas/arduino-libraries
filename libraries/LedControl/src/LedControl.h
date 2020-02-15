@@ -29,11 +29,11 @@
 
 #include <avr/pgmspace.h>
 
-#if (ARDUINO >= 100)
+// #if (ARDUINO >= 100)
 #include <Arduino.h>
-#else
+// #else
 // #include <WProgram.h>
-#endif
+// #endif
 
 /*
  * Segments to be switched on for characters and digits on

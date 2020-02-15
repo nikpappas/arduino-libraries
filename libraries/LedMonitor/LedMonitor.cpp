@@ -69,7 +69,7 @@ void LedMonitor::init()
 
 byte currentToByte(double current)
 {
-  int quantizedValue = floor(scale(current, ANALOG_MAX, LEVEL_COUNT-1));
+  int quantizedValue = floor(scale(current, ANALOG_MAX, LEVEL_COUNT));
   // Serial.println(quantizedValue);
   return levels[quantizedValue];
 }
