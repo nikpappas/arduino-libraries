@@ -1,6 +1,7 @@
 // int max(int a, int b);
 #include <arduino.h>
 
+
 class OpAmp
 {
 private:
