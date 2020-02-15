@@ -1,5 +1,5 @@
 // int max(int a, int b);
-#include <arduino.h>
+#include <Arduino.h>
 
 
 class OpAmp

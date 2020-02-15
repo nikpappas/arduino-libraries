@@ -31,9 +31,8 @@ byte _screenResult[] = {
     B00000000,
     B00000000};
 
-LedMonitor::LedMonitor(int toneIn, unsigned long delayTime, LedControl ledControl)
+LedMonitor::LedMonitor(int toneIn, LedControl ledControl)
 {
-  _delayTime = delayTime;
   _lc = ledControl;
   _in = toneIn;
   _lastRendered = millis();
@@ -53,10 +52,12 @@ void LedMonitor::tick(double curIn)
 {
   _screenBuffer[0] = currentToByte(curIn);
   draw();
-  // unsigned long diff = millis() - _lastRendered;
-  delay(_delayTime );//- diff);
   // printBuffer();
   _lastRendered = millis();
+}
+unsigned long LedMonitor::getLastRendered()
+{
+  return _lastRendered;
 }
 
 void LedMonitor::init()
@@ -68,7 +69,7 @@ void LedMonitor::init()
 
 byte currentToByte(double current)
 {
-  int quantizedValue = floor(scale(current, ANALOG_MAX, LEVEL_COUNT));
+  int quantizedValue = floor(scale(current, ANALOG_MAX, LEVEL_COUNT-1));
   // Serial.println(quantizedValue);
   return levels[quantizedValue];
 }

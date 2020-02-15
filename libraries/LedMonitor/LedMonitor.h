@@ -3,11 +3,11 @@
 
 #include <avr/pgmspace.h>
 
-#if (ARDUINO >= 100)
+// #if (ARDUINO >= 100)
 #include <Arduino.h>
-#else
-#include <WProgram.h>
-#endif
+// #else 
+// #include <WProgram.h>
+// #endif
 
 #include <LedControl.h> 
 
@@ -25,16 +25,16 @@ class LedMonitor{
 private:
   int _in;
   LedControl _lc;
-  unsigned long _delayTime;
   byte value;
   unsigned long _lastRendered;
 
 public:
-  LedMonitor(int toneIn, unsigned long delayTime, LedControl ledControl);
+  LedMonitor(int toneIn, LedControl ledControl);
   void tick(double curIn);
   void init();
   void draw();
   byte getValue();
+  unsigned long getLastRendered();
   double curIn;
   void printBuffer();
 };

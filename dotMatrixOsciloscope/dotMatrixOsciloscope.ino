@@ -1,13 +1,10 @@
 
-#include "led.h"
+#include <LedMonitor.h>
 
 LedControl lc=LedControl(13,10,11,1);  // Pins: DIN,CLK,CS, # of Display connected
 const int in = A0;
 const int VCC = 8;
 
-
-const int ANALOG_MAX = 1023;
-const int LEVEL_COUNT = 8;
 
 double frequency = 1;
 
