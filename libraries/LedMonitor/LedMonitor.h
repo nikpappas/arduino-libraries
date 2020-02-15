@@ -16,7 +16,7 @@ const int ANALOG_MAX = 1023;
 const int DIGITAL_MAX = 255;
 
 
-byte currentToByte(int current);
+byte currentToByte(double current);
 double scale(double value, int initial, int result);
 void clone(byte *screenBuffer, byte *screenResult, int size);
 void shiftLeft(byte *screenBuffer, byte *screenResult, int size);
@@ -27,15 +27,16 @@ private:
   LedControl _lc;
   unsigned long _delayTime;
   byte value;
-  unsigned long lastRendered;
+  unsigned long _lastRendered;
 
 public:
-  LedMonitor(int toneIn, int delayTime, LedControl ledControl);
-  void tick();
+  LedMonitor(int toneIn, unsigned long delayTime, LedControl ledControl);
+  void tick(double curIn);
   void init();
   void draw();
   byte getValue();
-  int curIn;
+  double curIn;
+  void printBuffer();
 };
 
 
