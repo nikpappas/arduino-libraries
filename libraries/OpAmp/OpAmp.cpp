@@ -1,4 +1,5 @@
 #include <OpAmp.h>
+
 OpAmp::OpAmp(int maxValue, int minValue)
 {
     _maxValue = maxValue;
