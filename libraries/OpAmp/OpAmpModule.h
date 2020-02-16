@@ -1,38 +1,23 @@
 #include <OpAmp.h>
+#include <ValueConverter.h>
 #include <Arduino.h>
+#include <Module.h>
 
-const int ANALOG_MAX = 1023;
-
-class OpAmpModule
+class OpAmpModule : public Module
 {
 private:
     int _inA;
     int _inB;
     int _out;
-    OpAmp _lm;
-    void init();
+    OpAmp _opAmp;
+    void setUpLog();
 
-    /* data */
 public:
+    int valA;
+    int valB;
+    int valOut;
+    virtual void init() override;
+    virtual void tick() override;
+    virtual void log() override;
     OpAmpModule(int inA, int inB, int out);
-    void tick();
 };
-
-OpAmpModule::OpAmpModule(int inA, int inB, int out)
-{
-    _inA = inA;
-    _inB = inB;
-    _out = out;
-    _lm = OpAmp(ANALOG_MAX, 0);
-}
-void OpAmpModule::tick()
-{
-    pinMode(_inA, INPUT);
-    pinMode(_inB, INPUT);
-    pinMode(_out, OUTPUT);
-}
-
-void OpAmpModule::tick()
-{
-    valA = analogRead(_inA);
-}
