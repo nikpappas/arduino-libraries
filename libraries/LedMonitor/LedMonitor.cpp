@@ -31,6 +31,7 @@ byte _screenResult[] = {
     B00000000,
     B00000000};
 
+LedMonitor::LedMonitor() {}
 LedMonitor::LedMonitor(int toneIn, LedControl ledControl)
 {
   _lc = ledControl;
@@ -92,8 +93,10 @@ void shiftLeft(byte *screenBuffer, byte *screenResult, int size)
     screenBuffer[i + 1] = screenResult[i]; //move all element to the right except last one
   }
 }
-void LedMonitor::printBuffer(){
- for(int i=0; i < LEVEL_COUNT; i++){
-   Serial.println(_screenBuffer[i], BIN);
- }
+void LedMonitor::printBuffer()
+{
+  for (int i = 0; i < LEVEL_COUNT; i++)
+  {
+    Serial.println(_screenBuffer[i], BIN);
+  }
 }

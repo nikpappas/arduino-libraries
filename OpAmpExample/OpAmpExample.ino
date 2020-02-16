@@ -29,7 +29,8 @@ void loop() {
 
   int value = opAmp.operate(inA, inB);
   
-  digitalWrite(OUT, value);
+//  digitalWrite(OUT, value);
+tone(OUT, 10);
   int result = analogRead(RESULT_IN);
   Serial.print(analog2V(inA)); // inA
   Serial.print(" ");

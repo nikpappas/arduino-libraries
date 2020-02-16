@@ -29,6 +29,7 @@ private:
   unsigned long _lastRendered;
 
 public:
+  LedMonitor();
   LedMonitor(int toneIn, LedControl ledControl);
   void tick(double curIn);
   void init();

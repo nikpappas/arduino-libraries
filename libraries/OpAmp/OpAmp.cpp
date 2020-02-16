@@ -6,6 +6,7 @@ OpAmp::OpAmp(int maxValue, int minValue)
     _minValue = minValue;
 }
 
+int OpAmp::operate() {}
 int OpAmp::operate(int inA, int inB)
 {
     if(inA-inB>0){

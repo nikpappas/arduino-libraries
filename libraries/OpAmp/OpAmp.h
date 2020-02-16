@@ -6,5 +6,6 @@ private:
 
 public:
     OpAmp(int maxValue, int minValue);
+    OpAmp();
     int operate(int inA, int inB);
 };
