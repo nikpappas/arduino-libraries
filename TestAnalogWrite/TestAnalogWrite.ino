@@ -7,6 +7,7 @@ void setup() {
 
 void loop() {
   analogWrite(9, 100);
+  
   delay(50);
   // put your main code here, to run repeatedly:
 

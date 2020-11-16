@@ -1,3 +1,6 @@
+#ifndef Module_h
+#define Module_h
+
 class Module
 {
 public:
@@ -6,3 +9,5 @@ public:
     virtual void log();
 
 };
+
+#endif

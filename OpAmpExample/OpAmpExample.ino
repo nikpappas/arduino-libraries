@@ -1,27 +1,33 @@
 #include <ValueConverter.h>
 #include <OpAmpModule.h>
+#include <VoltometerModule.h>
 #include <Logger.h>
 const int INA = A0;
 const int INB = A1;
+const int IN_READ = A3;
 
-const int OUT = 7;
+const int OUT = 9;
 
-const int RESULT_IN = A1;
-
-const unsigned long DELAY = 60;
+const unsigned long DELAY = 19;
 const int ANALOG_MAX = 1023;
 const int DIGITAL_MAX = 255;
-OpAmpModule opAmp = OpAmpModule(INA, INB, OUT);
+//OpAmpModule opAmp = OpAmpModule(INA, INB, OUT);
+VoltometerModule meter = VoltometerModule(IN_READ);
 
 void setup() {
   Serial.begin(9600);
-  opAmp.init();
+//  opAmp.init();
+  meter.init();
+  Serial.println("");
 }
 
-void loop() {
-    
-  opAmp.tick();
-  opAmp.log();
-  delay(DELAY);  
+void loop() {    
+//  opAmp.tick();
+//  opAmp.log();
+  Serial.print(" ");
+  meter.tick();
+  meter.log();
   
+  Serial.println("");
+  delay(DELAY);  
 }

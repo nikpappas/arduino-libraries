@@ -35,5 +35,5 @@ void OpAmpModule::log()
 }
 void OpAmpModule::setUpLog()
 {
-    Serial.println("inA inB out");
+    Serial.print("inA inB out");
 }

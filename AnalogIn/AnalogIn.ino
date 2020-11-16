@@ -21,13 +21,13 @@ void loop()
      Serial.println(adcVal);      
 //     Serial.plotter(adcVal);      
 //     }
-int i=0;
-for(i=5;i>0;i--){
-    if(adcVal > MAX_VALUE/i){
-      digitalWrite(i-4,HIGH);
-    }else{
-      digitalWrite(i-4,LOW);
-    }
-}
+//int i=0;
+//for(i=5;i>0;i--){
+//    if(adcVal > MAX_VALUE/i){
+//      digitalWrite(i-4,HIGH);
+//    }else{
+//      digitalWrite(i-4,LOW);
+//    }
+//}
     
 }

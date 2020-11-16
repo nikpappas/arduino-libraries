@@ -1,4 +1,4 @@
-#include <OpAmp.h>
+#include "OpAmp.h"
 
 OpAmp::OpAmp() {}
 OpAmp::OpAmp(int maxValue, int minValue)
